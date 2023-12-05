@@ -65,7 +65,7 @@ class GameGrid:
 
     def check_stalemate(self):
         column = np.linspace(1,self.columns,self.columns).astype(int)-1
-        full_columns = np.count_nonzero((self.grid[column,:]), axis=1) == 6
+        full_columns = np.count_nonzero((self.grid[column,:]), axis=1) == self.rows
 
         if np.sum(full_columns) == self.columns:
             return True
